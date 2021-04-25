@@ -41,5 +41,4 @@ public class FileParserImpl implements FileParser {
         }
         return departments;
     }
-
 }

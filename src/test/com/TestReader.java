@@ -47,5 +47,3 @@ public class TestReader {
         Assert.assertEquals(8, fileReader.readFile("src/main/resources/file/Test Task.csv").size());
     }
 }
-
-

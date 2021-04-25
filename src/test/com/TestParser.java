@@ -1,4 +1,4 @@
-package test.com;
+package com;
 
 import exception.AppException;
 import models.Department;
