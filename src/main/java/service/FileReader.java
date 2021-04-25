@@ -1,10 +1,10 @@
 package service;
 
-import exception.AppException;
+import exception.ReaderException;
 
 import java.util.List;
 
 public interface FileReader {
 
-    List<String> readFile(String filePath) throws AppException;
+    List<String> readFile(String filePath) throws ReaderException;
 }

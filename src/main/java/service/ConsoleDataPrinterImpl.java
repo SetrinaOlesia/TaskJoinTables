@@ -1,6 +1,6 @@
 package service;
 
-import exception.AppException;
+import exception.ReaderException;
 import models.Department;
 import models.Employee;
 
@@ -9,7 +9,7 @@ import java.util.List;
 public class ConsoleDataPrinterImpl implements ConsoleDataPrinter {
 
     @Override
-    public void showDataInConsole() throws AppException {
+    public void showDataInConsole() throws ReaderException {
         FileReader fileReader = new FileReaderImpl();
         FileParser fileParser = new FileParserImpl();
 

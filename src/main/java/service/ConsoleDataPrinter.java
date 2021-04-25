@@ -1,7 +1,7 @@
 package service;
 
-import exception.AppException;
+import exception.ReaderException;
 
 public interface ConsoleDataPrinter {
-     void showDataInConsole() throws AppException;
+     void showDataInConsole() throws ReaderException;
 }

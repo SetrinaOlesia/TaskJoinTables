@@ -1,14 +1,13 @@
-package test.com;
+package com;
 
-import exception.AppException;
+
+import exception.ReaderException;
 import org.junit.*;
 import service.FileReader;
 import service.FileReaderImpl;
 import static org.junit.Assert.*;
 
-import java.io.FileNotFoundException;
-import java.nio.file.NoSuchFileException;
-import java.util.ArrayList;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -26,12 +25,12 @@ public class TestReader {
     }
 
     @Test
-    public void fileIsEmptyTest() throws AppException {
+    public void fileIsEmptyTest() throws ReaderException {
         assertEquals(true,  fileReader.readFile("src/main/resources/file/emptyFileTest.csv").isEmpty());
     }
 
     @Test
-    public void normalDataTest() throws AppException {
+    public void normalDataTest() throws ReaderException {
         List<String> expected = Arrays.asList("id;name",
                 "1;Marketing",
                 "2;Management",
@@ -42,7 +41,7 @@ public class TestReader {
     }
 
     @Test
-    public void checkSizeTest() throws AppException {
+    public void checkSizeTest() throws ReaderException {
         List<String> actual = fileReader.readFile("src/main/resources/file/Test Task.csv");
         Assert.assertEquals(8, fileReader.readFile("src/main/resources/file/Test Task.csv").size());
     }

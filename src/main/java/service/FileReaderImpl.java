@@ -1,6 +1,6 @@
 package service;
 
-import exception.AppException;
+import exception.ReaderException;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -12,14 +12,14 @@ import java.util.List;
 public class FileReaderImpl implements FileReader {
 
     @Override
-    public List<String> readFile(String filePath) throws AppException {
+    public List<String> readFile(String filePath) throws ReaderException {
         List<String> fileLines = new ArrayList<>();
         try {
             fileLines = Files.readAllLines(Paths.get(filePath));
         } catch (NoSuchFileException e) {
-            throw new AppException("file not found" + e);
+            throw new ReaderException("file not found" + e);
         } catch (IOException e) {
-            throw new AppException("readFile() Exception:", e);
+            throw new ReaderException("readFile() Exception:" + e);
         }
         return fileLines;
     }

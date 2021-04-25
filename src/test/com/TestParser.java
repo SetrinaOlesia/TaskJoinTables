@@ -1,6 +1,6 @@
 package com;
 
-import exception.AppException;
+import exception.ReaderException;
 import models.Department;
 import org.junit.After;
 import org.junit.Assert;
@@ -28,7 +28,7 @@ public class TestParser {
     }
 
     @Test(expected = IndexOutOfBoundsException.class)
-    public void invalidSeparatorDepartmentTest() throws AppException {
+    public void invalidSeparatorDepartmentTest() throws ReaderException {
         List<String> listDepartment = Arrays.asList("id,name",
                 "1,Marketing",
                 "2,Management",
@@ -38,7 +38,7 @@ public class TestParser {
     }
 
     @Test(expected = IndexOutOfBoundsException.class)
-    public void invalidSeparatorEmployeeTest() throws AppException {
+    public void invalidSeparatorEmployeeTest() throws ReaderException {
         List<String> listEmployee = Arrays.asList("id,name,surname,department_id",
                 "1,John,Smith,2",
                 "2;Pete;Hallock,1",
